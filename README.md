@@ -1,4 +1,4 @@
-# Boat Trajectory Tracking with Deep Learning
+# Dog vs Cat Custom Keras Convnet
 Tracking the trajectory of a target ship in GPS coordinates from a single video taken from a monocular camera with unknown camera intrinsic and extrinsic parameters. The first stage of the detector uses a custom trained YOLOv4 object detector. The trajectory is estimated through by learning a quadratic approximation to the cost function. 
 This project was our team's entry into the <em>AI Tracks at Sea</em> competition held by the US Navy.
 ## Team
