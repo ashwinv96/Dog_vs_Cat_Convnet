@@ -1,22 +1,18 @@
 # Dog vs Cat Custom Keras Convnet
-Tracking the trajectory of a target ship in GPS coordinates from a single video taken from a monocular camera with unknown camera intrinsic and extrinsic parameters. The first stage of the detector uses a custom trained YOLOv4 object detector. The trajectory is estimated through by learning a quadratic approximation to the cost function. 
-This project was our team's entry into the <em>AI Tracks at Sea</em> competition held by the US Navy.
-## Team
-**Advisor**: Dr. Olugbenga Anubi <br />
-**Members**: Ashwin Vadivel, Boluwatife Olabiran, Muhammad Saud Ul Hassan, Yu Zheng
+Using a custom convolutional neural network (CNN) created with Keras to solve the binary classification problem of determining if an image is that of a cat or dog. The input dataset is provided by the Dogs vs Cats competition from Kaggle. 
 
-## Clone repo and add TensorRT weights and sample video
-Use git clone to clone the repo into your local machine. Download the model file and video sample at https://drive.google.com/drive/folders/1dE54rw5-pUVBVzzuK1zqbwRjhWruqXbx?usp=sharing. Next add the video "19.mp4" to the root of the cloned repo. Add the .trt model file into the directory "yolo/".
-## Usage
+## Clone repo and download dataset and model file
+Use git clone to clone the repo into your local machine. Download the model file and video sample at https://drive.google.com/drive/folders/1NzylL0iEFiPLxi4_r3yxbvhtNABNaGZQ?usp=sharing. Extract and place all items in the root of your project directory.
 To run the demo please enter the following command: 
 ```python
 python3 main.py \
---video </path_to_video> \
--n number_of_points_to_generate \
--lat source_latitude \
--lon source_longitude
 ```
-The algorithm will run through every frame of the video and ouput detections to the terminal. Once completed, the detected trajectory will be saved in the directory into the file: <strong><em>interpolated_data.csv</em></strong>. The number of points in the trajectory will be equal to the argument <em>-n number_of_points_to_generate</em>.
+If the trained weights (model file) are used then the algorithm will skip the process of training. After the first time running the algorithm, the image datasets (train set and test set) are placed in NumPy arrays once and won't have to be created from scratch again. The algorithm will make predictions with the images in the <strong><em>test1</em></strong> directory. How many images to make predictions on (and plot) can be specified by adding the lines: 
+```python
+import convnet as cnn \
+cnn.predict_and_plot(test_set, images_to_test, f1, f2, model) # f1, f2 are the factor pair of (images_to_test) for arranging the matplotlib plot. f1 * f1 = images_to_test
+```
+
 ## Visualize Output Trajectory 
 In order to view the output trajectory, we used the free website: <em>https://www.gpsvisualizer.com/</em>.
 Ground Truth Trajectory             | Model Predicted Trajectory
