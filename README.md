@@ -5,7 +5,7 @@ Using a custom convolutional neural network (CNN) created with Keras to solve th
 Use git clone to clone the repo into your local machine. Download the model file and video sample at https://drive.google.com/drive/folders/1NzylL0iEFiPLxi4_r3yxbvhtNABNaGZQ?usp=sharing. Extract and place all items in the root of your project directory.
 To run the demo please enter the following command: 
 ```python
-python3 main.py \
+python3 main.py 
 ```
 If the trained weights (model file) are used then the algorithm will skip the process of training. After the first time running the algorithm, the image datasets (train set and test set) are placed in NumPy arrays once and won't have to be created from scratch again. The algorithm will make predictions with the images in the <strong>test1</strong> directory. How many images to make predictions on (and plot) can be specified by modifying <strong>line 40 </strong>in <em>main.py</em> : 
 ```python
