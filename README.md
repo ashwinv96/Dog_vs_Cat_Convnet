@@ -7,9 +7,8 @@ To run the demo please enter the following command:
 ```python
 python3 main.py \
 ```
-If the trained weights (model file) are used then the algorithm will skip the process of training. After the first time running the algorithm, the image datasets (train set and test set) are placed in NumPy arrays once and won't have to be created from scratch again. The algorithm will make predictions with the images in the <strong>test1</strong> directory. How many images to make predictions on (and plot) can be specified by adding the lines: 
+If the trained weights (model file) are used then the algorithm will skip the process of training. After the first time running the algorithm, the image datasets (train set and test set) are placed in NumPy arrays once and won't have to be created from scratch again. The algorithm will make predictions with the images in the <strong>test1</strong> directory. How many images to make predictions on (and plot) can be specified by modifying <strong>line 40 </strong>in <em>main.py</em> : 
 ```python
-import convnet as cnn \
 cnn.predict_and_plot(test_set, images_to_test, f1, f2, model) # f1, f2 are the factor pair of (images_to_test) for arranging the matplotlib plot. f1 * f1 = images_to_test
 ```
 
